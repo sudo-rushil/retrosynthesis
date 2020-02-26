@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Retrosynthesis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<script src="assets/libs/raphael-min.2.0.1.js"></script>
+		<script src="assets/libs/kekule/kekule.js?modules=chemWidget,algorithm&locals=en,zh"></script>
+		<link rel="stylesheet" type="text/css" href="assets/libs/kekule/themes/default/kekule.css" />
+
+		<script src="assets/js/script.js"></script>
+
+		<link rel="icon" type="image/x-icon" href="images/chem.ico">
+
+		<style id="svgStyle">
+	    svg
+			{
+				width: 560px;
+				height: 300px;
+	    }
+		</style>
+		<style id="editorStyle">
+			#chemComposer
+			{
+				width: 700px;
+				margin: 0;
+			}
+	  </style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon solid fa-atom"></span>
+						</div>
+
+						<div class="content">
+							<div class="inner">
+								<h1>Retrosynthesis</h1>
+								<h3>AI-powered open-source topological retrosynthesis for everyone</h3>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#run"><b>Run</b></a></li>
+								<li><a href="#about"><b>About</b></a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Input -->
+							<article id="run">
+								<h2 class="major">Run</h2>
+								<div id="mainInput">
+									<script>resizeEditor();</script>
+									<div id="chemComposer" data-widget="Kekule.Editor.Composer"></div>
+									<input type="button" onclick="location.href='#results';writeSmiles();" class="button" value='Disconnect'/>
+								</div>
+
+								<p></p>
+								<p></p>
+
+								<div class="content">
+									<h3 class='major'>Instructions</h3>
+
+									<ol>
+										<li>Draw the target molecule in the editor.</li>
+										<li>Click <b>DISCONNECT</b> to find a retrosynthetic disconnection for the target molecule.</li>
+									</ol>
+								</div>
+
+							</article>
+
+						<!-- Work -->
+							<article id="results">
+								<h2 class="major">Results</h2>
+
+								<div id="displayResults">
+									<center><span id="result" class="image"></span></center>
+									<p id="hiddenMessage" style="display:none"></p>
+									<script>resizeSVG();</script>
+								</div>
+
+								<div id="returnButtons">
+									<input type="button" onclick="writeSmiles();resizeSVG();" class="button" value='Rerun'/>
+									<p></p>
+									<a href="#run" class="button">Back</a>
+								</div>
+
+								<p></p>
+
+								<div id="questions">
+									<h3><a href='#about'>Frequent Questions</a></h3>
+								</div>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+
+								<div id="engine">
+									<p><a href=http://retrosynthesis.com>retrosynthesis.com</a> is a clean interface to the Odachi Retrosynthesis engine.
+										It was based on principlies of simplicity, intuitiveness, and minimalism to allow chemists without formal computer
+										science background to make use of the model's retrosynthetic prediction capabilities.</p>
+
+									<p>This site is powered by the Odachi Retrosynthesis Engine.
+										Odachi uses a graph convolutional network to recognize retrosynthetically similar clusters within molecules.
+										The network was trained over 400,000 examples from the USPTO reaction database. The network uses four stacked
+										convolutional layers to generate a retrosynthetic embedding of the molecule and spectral clustering to identify
+										the bond disconnection.</p>
+								</div>
+
+								<div id="FAQs">
+									<h3>Frequently Asked Questions</h3>
+									<ol>
+										<li>The disconnection returned makes no sense. Why?<p></p>The Odachi Retrosynthesis Engine is still in its early stages,
+											and reflects inherent biases in its training data. Often, the spectral clustering algorithm can incorrectly detect synthons.
+											In this case, clicking <b>RERUN</b> will often help.<p></p></li>
+
+										<li>How do I know this reaction will work in real life?<p></p>The Odachi Engine running in the backend is designed to find
+											topologically reasonable retrosynthetic disconnections. As of its current version, it does not validate the generated forward reactions for
+										speed. Therefore, it is up to the user to use their judgement before attempting any reaction in the lab.</li>
+									</ol>
+								</div>
+
+								<p>GitHub Link: <a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></p>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Rushil Mallarapu. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
