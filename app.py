@@ -40,7 +40,3 @@ def run_odachi_versioned():
     version = 9 if 'ver' not in request.args else int(request.args['ver'])
 
     return jsonify(odachi(smiles, clusters, version))
-
-
-if __name__ == '__main__':
-    app.run()

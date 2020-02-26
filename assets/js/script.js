@@ -50,7 +50,8 @@ function resizeEditor() {
 
 function resizeSVG() {
   var docwidth = document.getElementById('displayResults').offsetWidth;
-  var svgstyle = 'svg {width:' + docwidth + 'px; height:300px;}';
+  var docheight = Math.round(docwidth * 0.6);
+  var svgstyle = 'svg {width:' + docwidth + 'px; height:' + docheight + 'px;}';
   document.getElementById('svgStyle').innerHTML = svgstyle;
 }
 

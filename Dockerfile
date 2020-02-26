@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.0.0-py3
+FROM continuumio/miniconda3
 COPY . /usr/src/
 WORKDIR /usr/src/
 RUN make install
