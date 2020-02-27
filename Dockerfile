@@ -1,6 +1,7 @@
 FROM continuumio/miniconda3
 COPY . /usr/src/
 WORKDIR /usr/src/
+RUN mkdir /usr/src/tmp
 RUN apt-get update
 RUN apt-get install make
 RUN apt install nodejs -y curl
