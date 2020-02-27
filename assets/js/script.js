@@ -1,5 +1,6 @@
 var chemEditor;
 var chemComposer;
+const endpoint = 'http://127.0.0.1:5050/v2/run?ver=9&smiles=';
 
 
 function init()
@@ -58,10 +59,9 @@ function resizeSVG() {
 
 function sendSmiles(smiles) {
   const request = new XMLHttpRequest();
-  var endpoint = 'http://127.0.0.1:5000/v2/run?ver=9&smiles=';
-  endpoint = endpoint + smiles;
+  querypoint = endpoint + smiles;
 
-  request.open('GET', endpoint, true)
+  request.open('GET', querypoint, true)
   request.onload = function() {
     var data = JSON.parse(this.response)
 
