@@ -17,7 +17,7 @@ stop:
 	ps ax | grep gunicorn
 
 install:
-	pip install -r requirements.txt
+	pip install -r requirements.txt --no-cache-dir
 	conda install -c conda-forge rdkit
 	npm install -g http-server
 
