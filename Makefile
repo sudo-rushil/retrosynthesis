@@ -11,13 +11,13 @@ build:
 	docker build -t retrosynthesis .
 
 start:
-	docker run -d -p 5000:5000 -p 8080:8080 retrosynthesis --name retrosynthesis
+	docker run -d -p 5000:5000 -p 8080:8080 retrosynthesis
 
 stop:
-	ps ax | grep gunicorn
+	docker rm $(docker stop $(docker ps -a -q  --filter ancestor=retrosynthesis))
 
 install:
-	TMPDIR=/usr/src/tmp pip install -r requirements.txt
+	pip install -r requirements.txt --no-cache-dir
 	conda install -c conda-forge rdkit
 	npm install -g http-server
 
