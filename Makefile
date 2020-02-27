@@ -12,11 +12,7 @@ stop:
 
 install:
 	pip install -r requirements.txt
-	conda install rdkit
-
-build:
-	docker build -t $(NAME).
-	docker network create $(Name).
+	sudo apt-get install python-rdkit librdkit1 rdkit-data
 
 pull:
 	git pull
