@@ -8,7 +8,7 @@ run:
 	http-server
 
 build:
-	docker build -t retrosynthesis .
+	docker build -t retrosynthesis . --no-cache
 
 start:
 	docker run -d -p 5000:5000 -p 8080:8080 retrosynthesis
@@ -18,6 +18,8 @@ stop:
 
 install:
 	pip install -r requirements.txt --no-cache-dir
+
+installother:
 	conda install -c conda-forge rdkit
 	npm install -g http-server
 
