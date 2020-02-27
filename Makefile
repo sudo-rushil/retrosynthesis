@@ -11,7 +11,7 @@ build:
 	docker build -t retrosynthesis .
 
 start:
-	docker run -p 5000:5000 -p 80:8080 retrosynthesis
+	docker run -d -p 5000:5000 -p 8080:8080 retrosynthesis --name retrosynthesis
 
 stop:
 	ps ax | grep gunicorn
