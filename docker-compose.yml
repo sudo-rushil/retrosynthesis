@@ -1,0 +1,10 @@
+version: "3"
+services:
+  retrosynthesis:
+    build: .
+    command: "make run"
+    ports:
+      - "5050:5050"
+      - "8080:8080"
+    volumes:
+      - ".:/usr/src/"
