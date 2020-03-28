@@ -13,10 +13,9 @@ function init()
   .setEnableLoadNewFile(true)
   .setEnableCreateNewDoc(true)
   .setAllowCreateNewChild(false)
-  .setCommonToolButtons(['loadData', 'saveData', 'undo', 'redo', 'copy', 'cut', 'paste',
-    'zoomIn', 'reset', 'zoomOut', 'objInspector'])   // create all default common tool buttons
+  .setCommonToolButtons(['loadData', 'saveData', 'undo', 'redo'])
   .setChemToolButtons(['manipulate', 'erase', 'bond', 'atomAndFormula',
-    'ring', 'charge']);  // create only chem tool buttons related to molecule
+    'ring', 'charge']);
 }
 
 
