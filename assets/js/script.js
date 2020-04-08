@@ -1,6 +1,6 @@
 var chemEditor;
 var chemComposer;
-const endpoint = 'http://54.89.67.2:5050/v2/run?ver=9&smiles=';
+const endpoint = 'http://54.152.1.174:5050/v2/run?ver=9&smiles=';
 
 
 function init()
